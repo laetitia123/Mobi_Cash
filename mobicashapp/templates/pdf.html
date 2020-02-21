@@ -1,0 +1,36 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <table class="table">
+        <thead >
+        <tr >
+            <th>Invoice Issued Date</th>
+            <th>Item Description</th>
+            <th>Total Amount</th>
+            <th>Invoice Amount</th>
+        </tr>
+        </thead>
+        <tbody>
+            {% for cust in customers %}
+            <tr>
+              <th scope="row">{{cust.id}}</th>
+              <td>{{cust.name}}</td>
+              <td>{{cust.adress}}</td>
+              <td>{{cust.phone}}</td>
+            </tr>
+          {% endfor %}
+        </tbody>
+    </table>
+    <p style="text-align: right;"> ________</p>
+    <p style="text-align: right;">Invoice Total</p>
+    
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!-- ;;;;;;;;;;;;;;;;;;;;;html to get aploadform;;;;;;;;;;;;;;;;; -->
+
+
+{% load bootstrap4 %} {% load staticfiles %}
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>New Article</title>
+  {{form.media}}
+
+{% block styles %} {% bootstrap_css %}
+  <link rel="stylesheet" href="{% static 'css/news.css' %}"> {% endblock %}
+
+</head>
+
+<body>
+
+  <div class="container-fluid" >
+    <div class="row">
+      
+        <div class="col-md-2" style="  background-color:rgb(37,38,54);color:white;height: 600px;width:10%">
+          <a><img src="https://gameo.io/static/images/dashboard/profile.6bcc1092ab3a.png" height="100px"> {{ user.username }} '{{ user.email }}'</a><br>
+          
+          <i class="fa fa-plus" aria-hidden="true" style ></i>
+          <a  href="{%url 'add-customer'%}">Add New Customer</a><br>
+          
+          <a  href="{%url 'view-customer'%}">View Customers</a><br>
+          <a  href="{%url 'edit'%}">Edit  Customer</a><br>
+          <a  href="{%url 'delete'%}">Delete Customer </a><br>
+          <a'style="font-size:18px;" href="/logout">Logout</a>
+       </div>
+    <div class="col-md-10">
+      <header style="background-color:rgb(207, 236, 236);margin-left:-15px; height:50px;">
+        <h2>Dashboard</h2>
+      </header>
+      <form  action="{%url 'add-customer'%}" method="post" enctype="multipart/form-data" style="width:400px;margin-left:150px;">
+        {%csrf_token%}
+                      
+        {% bootstrap_form form%}
+        <input type="submit" class="btn btn-success btn-lg" value="Post">
+      </form>
+    </div>
+    </div>
+  </div>
+
+  
+
+
+   {% block scripts %}
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script> 
+
+  <script type="text/javascript" src="{%static 'js/mobicah.js'%}"></script>
+
+  {% bootstrap_javascript %} {% endblock %}
+
+  <footer style="font-family: 'Times New Roman', Times, serif;
+  text-transform: capitalize;margin-top:40px;padding-top:80px;height:200px;text-align:center;">
+  <h3>copyright Laetitia |all right reserved| 2019 </h3>
+  </footer> 
+
+</body>
+<style>
+  a{
+    color:#cccccc;
+  }
+</style>
+</html>
