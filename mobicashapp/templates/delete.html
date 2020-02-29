@@ -13,6 +13,30 @@
   {% block styles %} {% bootstrap_css %}
     <link rel="stylesheet" href="{% static 'css/news.css' %}"> {% endblock %}
 </head>
+<div class="container-fluid" >
+  <div class="row">
+    
+      <div class="col-sm-2" style="background-image: linear-gradient(to bottom,rgb(14, 13, 13),chocolate
+      ,white);line-height:45px;height:630px;">
+        <a><img src="https://gameo.io/static/images/dashboard/profile.6bcc1092ab3a.png" height="100px"> {{ user.username }} '{{ user.email }}'</a><br>
+        
+       
+        <a  href="{%url 'add-customer'%} ">Add New Customer</a><br>
+        
+        <a  href="{%url 'view-customer'%}">View Customers</a><br>
+        <a  href="{%url 'edit'%}">Edit  Customer</a><br>
+        <a  href="{%url 'delete'%}">Delete Customer </a><br>
+        <a style="font-size:18px;" href="/logout">Logout</a>
+     </div>
+  <div class="col-sm-10" >
+    <div class="row" style="background-color:#343A40;height:80px;color:white">
+      <div class="col-sm-10" >
+      <h1> Dashboard</h1>
+    </div>
+    </div>
+    <div class="col-sm-10" ><h2>welcome to the Dashbord</h2></div>
+  
+      <span ><hr></span>
 <table class="table">
   <thead class="thead-dark">
     <tr>
@@ -42,11 +66,53 @@
 
 
 
-<footer style="background-color: black;color:white;font-family: 'Times New Roman', Times, serif;
-text-transform: capitalize;margin-top:40px;padding-top:80px;height:200px;text-align:center;">
-<h3>copyright Laetitia |all right reserved| 2019 </h3>
-</footer> 
+<footer>
+  <small>copyright Laetitia |all right reserved| 2020</small>
+  </footer> 
 
+</body>
+<style>
+ 
+  a{
+    color:#cccccc;
+    padding-top:30px;
+    text-decoration:none;
+
+
+  }
+  a:hover{
+    color: ivory;
+    text-decoration:none;
+  }
+  i{
+    color:saddlebrown;
+  }
+  h1{
+    font-family: 'Philosopher', sans-serif;
+  }
+  footer{
+  font-family: Arial, Helvetica, sans-serif;
+  text-transform: capitalize;
+ 
+  height:200px;
+  text-align:center;
+ 
+  }
+  h2{
+    text-align: center;
+    margin-top: 20px;
+    text-transform: capitalize;
+  }
+  h3{
+    font-family: 'Philosopher', sans-serif;
+    margin-top: 50px;
+    margin-left:300px;
+
+  }
+  .btn-dark{
+    background-color:chocolate;
+  }
+</style>
 </body>
 
 </html>

@@ -17,59 +17,68 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
   <title>Document</title>
 </head>
 <body >
-  
-<div class="container-fluid" >
-  <div class="row">
-    
-      <div class="col-md-2" style="background-color:#3333;height: 3400px;">
-        <a href="#">Add New Customer</a><br>
-        <a  class='btn btn-default'style="font-size:18px" href="{%url 'add-customer'%}"><button class="btn btn-info" style="padding-top:-65px;height:80px;"> Add Customer</button></a>
-        <a href="#">View Customers</a><br>
-        <a href="#">Edit  Customer</a><br>
-        <a href="#">Delete Customer </a><br>
-     </div>
-    <div class="col-md-10">
+
+     <div class="container-fluid" >
+      <div class="row">
+        
+          <div class="col-sm-2" style="background-image: linear-gradient(to bottom,rgb(14, 13, 13),chocolate
+          ,white);line-height:45px;height:630px;">
+            <a><img src="https://gameo.io/static/images/dashboard/profile.6bcc1092ab3a.png" height="100px"> {{ user.username }} '{{ user.email }}'</a><br>
+            
+           
+            <a  href="{%url 'add-customer'%} ">Add New Customer</a><br>
+            
+            <a  href="{%url 'view-customer'%}">View Customers</a><br>
+            <a  href="{%url 'edit'%}">Edit  Customer</a><br>
+            <a  href="{%url 'delete'%}">Delete Customer </a><br>
+            <a style="font-size:18px;" href="/logout">Logout</a>
+         </div>
+      <div class="col-sm-10" >
+        <div class="row" style="background-color:#343A40;height:80px;color:white">
+          <div class="col-sm-10" >
+          <h1> Dashboard</h1>
+        </div>
+        </div>
+        <div class="col-sm-10" ><h2>welcome to the Dashbord</h2></div>
       
-      <header style="background-color:rgb(207, 236, 236);margin-left:-15px; height:50px;">
-      <h2>Dashboard</h2>
-    </header>
-    <div class="row">
+          <span ><hr></span>
    
       {% for image in images %}
  
-
+<!-- 
   
       <div class="col-sm-6" width="400px" style="border:1px solid whitesmoke;padding-top:20px;" >
           <div class="wrapper">
               <div class="parent" onclick="">
-                  <div class="child bg-one">
+                  <div class="child bg-one"> -->
           
               <!-- <img src="{{user.profile.profile_picture.url}}" class="img-circle"  width="32" height="32">
               
               <strong style="color: #333333;cursor: pointer">{{user.profile.Name}}</strong>
               <p style="margin-left:520px;margin-top:-50px;font-size:30px;">...</p> -->
          
-        <img src="{{image.image.url}} " id="image" style=" margin-bottom:20px;" class="img-fluid"  alt="Image">
+        <!-- <img src="{{image.image.url}} " id="image" style=" margin-bottom:20px;" class="img-fluid"  alt="Image"> -->
         <!-- alt="{{image.user.user.username}}" width="30" height="30"> -->
-      </div>
+      <!-- </div> -->
   
-    <stron><h6 style="color: #333333;cursor: pointer;padding-top:30px">{{image.pname}}</strong></h6>
+    <!-- <stron><h6 style="color: #333333;cursor: pointer;padding-top:30px">{{image.pname}}</strong></h6>
     <h6 style="margin-left:150px;">{{image.pub_date }}</h6><br></br>
     <h6>
        <img src="{{user.profile.profile_picture.url}}" class="img-circle"  width="32" height="32"> 
-      Posted  by 
+      Posted  by  -->
        <!-- <strong style="color: #333333;cursor: pointer">{{user.profile.Name}}</strong></h6> -->
   
-    
+<!--     
 <p><button class="btn btn-outline-info">VIEW PROJECT</button></a>
 </p>
     </div>
 
     </div>
-    </div>
+    </div> -->
 
  
 
@@ -79,18 +88,7 @@
 {% endfor %}
     </div>
   </div>
-    <div class="col-md-3">
-   
-
-        <form  action="{%url 'newsToday'%}" method="post">
-          {%csrf_token%}
-      
-          {% bootstrap_form letterForm layout='inline' %}
-          <input type="submit" value="Subscribe">
-        </form>
-      
-  
-    </div>
+    
   </div>
 </div>
   
@@ -125,6 +123,53 @@
 {% endblock %}
 
 </div>
+<footer>
+  <small>copyright Laetitia |all right reserved| 2020</small>
+  </footer> 
+
 </body>
+<style>
+ 
+  a{
+    color:#cccccc;
+    padding-top:30px;
+    text-decoration:none;
+
+
+  }
+  a:hover{
+    color: ivory;
+    text-decoration:none;
+  }
+  i{
+    color:saddlebrown;
+  }
+  h1{
+    font-family: 'Philosopher', sans-serif;
+  }
+  footer{
+  font-family: Arial, Helvetica, sans-serif;
+  text-transform: capitalize;
+ 
+  height:200px;
+  text-align:center;
+ 
+  }
+  h2{
+    text-align: center;
+    margin-top: 20px;
+    text-transform: capitalize;
+  }
+  h3{
+    font-family: 'Philosopher', sans-serif;
+    margin-top: 50px;
+    margin-left:300px;
+
+  }
+  .btn-dark{
+    background-color:chocolate;
+  }
+</style>
+
 
 </html>
